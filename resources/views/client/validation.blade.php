@@ -3,9 +3,9 @@
 
 @section('meta')
 <title>Merci Laayoune - Commande</title>
-<meta name="description" content="Préparez-vous à finaliser votre commande au Merci Laayoune. Remplissez les informations nécessaires, 
+<meta name="description" content="Préparez-vous à finaliser votre commande au Merci Laayoune. Remplissez les informations nécessaires,
 telles que les détails de livraison et les préférences spéciales, pour que nous puissions vous offrir un service personnalisé et répondre à vos attentes.">
-<meta name="keywords" content="Validation commande, Informations de livraison, Préférences spéciales, Service personnalisé, Café Laayoune commande."> 
+<meta name="keywords" content="Validation commande, Informations de livraison, Préférences spéciales, Service personnalisé, Café Laayoune commande.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Merci Laayoune - Commande">
@@ -19,17 +19,17 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
 
 <div class="container cntnr">
-    
+
     <div class="row" style="width: 100%;
     margin: auto;">
     @if ($msg = Session::get('error'))
     <div class="alert alert-danger">
         <ul>
-            
+
             <li>{{ $msg }}</li>
-            
+
         </ul>
-        
+
     </div>
 @endif
         <div class="card checkout-order-summary">
@@ -39,7 +39,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                 </div>
                 <form action="{{ route('coupon.add') }}">
                     <div class="py-3 bg-light mb-3 cardcoupon" id="coupon" style="display: none">
-                        <input type="text" class="form-control" name="code" placeholder="Saisir le code promo">   
+                        <input type="text" class="form-control" name="code" placeholder="Saisir le code promo">
                             <button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4" style="    margin: 20px auto 0;">
                                 Valider
                             </button>
@@ -81,12 +81,12 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                 Saisir vos informations
                             </p>
                         </div>
-                       
+
                     </div>
                     <ol class="activity-checkout mb-0 px-4 mt-3">
                         <li class="checkout-item">
 
-                            
+
                             <div class="feed-item-list">
                                 <div>
 
@@ -96,75 +96,61 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                             <div class="alert alert-danger">
 
                                                 <ul>
-                                                    
+
                                                     <li>Merci de remplire tous les champs indiqué par *</li>
-                                                    
+
                                                 </ul>
                                             </div>
                                         @endif
 
 
                                         <form action="{{ route('checkout.store') }}" method="post" id="form">
-                                        @csrf
+                                            @csrf
                                             <div>
                                                 <div class="row">
-                                                    <div class="col-lg-4 mod-4c">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="billing-name">Nom <span style="color: #cf2227">*</span></label>
-                                                            <input type="text" class="form-control" name="nom" placeholder="Enter name">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="billing-email-address">Email Address <span style="color: #cf2227">*</span></label>
-                                                            <input type="email" class="form-control" name="email" placeholder="Enter email">
-                                                        </div>
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label" for="billing-name">Nom <span style="color: #cf2227">*</span></label>
+                                                        <input type="text" class="form-control" name="nom" placeholder="Enter name" required>
                                                     </div>
-                                                    <div class="col-lg-4 mod-4c">
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="billing-name">Prenom <span style="color: #cf2227">*</span></label>
-                                                            <input type="text" class="form-control" name="prenom" placeholder="Enter name">
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label" for="billing-phone">Phone <span style="color: #cf2227">*</span></label>
-                                                            <input type="text" class="form-control" name="phone" placeholder="Enter Phone no.">
-                                                        </div>
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label" for="billing-email-address">Email Address <span style="color: #cf2227">*</span></label>
+                                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
                                                     </div>
-
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label" for="billing-prenom">Prenom <span style="color: #cf2227">*</span></label>
+                                                        <input type="text" class="form-control" name="prenom" placeholder="Enter name" required>
+                                                    </div>
+                                                    <div class="col-12 mb-3">
+                                                        <label class="form-label" for="billing-phone">Phone <span style="color: #cf2227">*</span></label>
+                                                        <input type="text" class="form-control" name="phone" placeholder="Enter Phone no." required>
+                                                    </div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="billing-address">Address <span style="color: #cf2227">*</span></label>
-                                                    
                                                     <textarea class="form-control" name="adresse" rows="3" placeholder="Enter full address" id="adresseHidden" hidden></textarea>
-                                                    <textarea class="form-control" name="adresse" rows="3" placeholder="Enter full address" id="adresse"></textarea>
+                                                    <textarea class="form-control" name="adresse" rows="3" placeholder="Enter full address" id="adresse" required></textarea>
                                                 </div>
-                                                
+
                                                 <div class="mb-3">
                                                     <label class="form-label" for="billing-address">Notes de commande (facultatif)</label>
                                                     <textarea class="form-control" name="notes" rows="3" placeholder="Commentaires concernant votre commande, ex: consignes de livraison, les supplements..."></textarea>
                                                 </div>
 
+                                                @php
+                                                    $n = 1;
+                                                @endphp
+                                                <textarea name="commande" id="" cols="30" rows="10" hidden>
+                                                @foreach ($cartItems as $cartItem)
+                                                    Article {{$n}}: {{$cartItem->name}} ({{$cartItem->price}} DH x {{$cartItem->qty}}) |
+                                                @php
+                                                    $n++;
+                                                @endphp
+                                                @endforeach
+                                                </textarea>
 
 
-                                            </div>
 
-                                            @php
-                                                $n = 1;
-                                            @endphp
-                                            <textarea name="commande" id="" cols="30" rows="10" hidden>
-                                            @foreach ($cartItems as $cartItem)
-                                                Article {{$n}}: {{$cartItem->name}} ({{$cartItem->price}} DH x {{$cartItem->qty}}) |  
-                                            @php
-                                                $n++;
-                                            @endphp
-                                            @endforeach
-                                            </textarea>
-
-
-                                        
-                                        
-                                        
-                                        
-                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -176,7 +162,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
         </div>
 
-        
+
 
 
         <div class="col-xl-4 mod-4">
@@ -200,17 +186,17 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                 Choisir votre mode de paiement
                             </p>
                         </div>
-                       
+
                     </div>
 
                         <div class="Mlivraison">
                             <div>
-                                <input type="radio" name="Mlivraison" id="" onclick="UnchoseLivraison()" value="Retirer sur place"> <span>Retirer sur place</span> 
+                                <input type="radio" name="Mlivraison" id="" onclick="UnchoseLivraison()" value="Retirer sur place"> <span>Retirer sur place</span>
                             </div>
                             <div class="LD">
                                 <input type="radio" name="Mlivraison" id="" onclick="ChoseLivraison()" value="Livraison à domicile"> <span>Livraison à domicile (+15 DH)</span>
                             </div>
-                            
+
                         </div>
 
                 </div>
@@ -239,9 +225,9 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                 @endif
                             </p>
                         </div>
-                       
+
                     </div>
-                    
+
                     <div class="table-responsive">
                         <table class="table table-centered mb-0 table-nowrap">
                             <thead>
@@ -252,8 +238,8 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                             </thead>
                             <tbody>
                                 @if (count($cartItems) > 0)
-                                    
-                                
+
+
                                 @php
                                 $total = 0;
                                 @endphp
@@ -275,7 +261,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
 
 
-                                    
+
                                 <tr class="bg-light">
                                     <td colspan="2">
                                         <h5 class="font-size-14 m-0">Subtotal:</h5>
@@ -312,7 +298,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                     </td>
                                 </tr>
                                 <input type="hidden" value="{{$total}}" name="prix" id="total">
-                                    
+
                                 @else
                                 <tr class="bg-light">
                                     <td colspan="2">
@@ -325,7 +311,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                 @endif
                             </tbody>
                         </table>
-                        
+
 
                         <script>
                             var trL = document.getElementById("trLivraison");
@@ -334,7 +320,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                             var tdL0 = document.getElementById("livrason0");
                             var total = document.getElementById("total");
                             var discount = "<?php Print(Session::get('discount')); ?>";
-                            function ChoseLivraison() 
+                            function ChoseLivraison()
                             {
                                     trL.style.display = "table-row";
                                     tdL1.style.display = "table-cell";
@@ -349,7 +335,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
 
                             }
-                            function UnchoseLivraison()    
+                            function UnchoseLivraison()
                                 {
                                     trL.style.display = "none";
                                     tdL1.style.display = "none";
@@ -357,7 +343,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
                                     total.value = (total.value) - (total.value)*discount/100;
 
-                                    
+
                                     document.getElementById("adresse").innerHTML = "Retirer sur place";
                                     document.getElementById("adresse").setAttribute("disabled", true);
                                     document.getElementById("adresseHidden").innerHTML = "Retirer sur place";
@@ -385,41 +371,41 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                             </g>
                                             </svg>
                                     </div>
-                                    
-                                    
+
+
                                     <div class="paymenticons">
                                         <input type="radio" name="Pmethod" value="CMI"><span>Paiement par carte bancaire</span> <br>
                                     <img src="clientpage/images/payment/cards.png" alt="" width="100px">
                                     </div>
-                                    
+
                                     <div class="paymenticons">
                                         <input type="radio" name="Pmethod" value="PayPal"><span>Paiement par PayPal</span>
                                     <img src="clientpage/images/payment/paypalcards.jpg" alt="" width="120px">
                                     </div>
-                                    
-                                    
 
-                                    
+
+
+
                                     <input type="hidden" value="{{ session('oid') }}" name="oid">
                                 </div>
-                            
+
                             <p style="font-size: 0.75em" class="my-3">
-                                Vos données personnelles seront utilisées pour le traitement de votre commande, 
-                                vous accompagner au cours de votre visite du site web, et pour d’autres raisons décrites dans notre 
-                                <a href="{{ route('politique') }}" style="font-size: 1em; font-weight:bold; color:black" class="politique">politique de confidentialité.</a> 
+                                Vos données personnelles seront utilisées pour le traitement de votre commande,
+                                vous accompagner au cours de votre visite du site web, et pour d’autres raisons décrites dans notre
+                                <a href="{{ route('politique') }}" style="font-size: 1em; font-weight:bold; color:black" class="politique">politique de confidentialité.</a>
                             </p>
                         </div>
-                        
+
                     <div class="valret mt-4">
                         <div class="ret">
                             <a href="clientMenu" class="btn btn-link text-muted ContinueSH">
                                 <i class="mdi mdi-arrow-left me-1"></i> Retour au menu </a>
-                        </div> 
-                        <div >    
+                        </div>
+                        <div >
                             <button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4">
                                 Valider
                             </button>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -428,7 +414,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
     </div>
 </form>
     <!-- end row -->
-    
+
 </div>
 
 
@@ -436,7 +422,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
 
 
- 
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -457,7 +443,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                     {{-- <button class="btn btn-outline-success">Accueil</button> --}}
                 </div>
             </div>
-        
+
         </div>
     </div>
   </div>
@@ -477,7 +463,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
             });
         </script>';
     @endphp
-    
+
 @endif
 
 
