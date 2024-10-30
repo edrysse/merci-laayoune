@@ -102,39 +102,37 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                                 </ul>
                                             </div>
                                         @endif
-
-
                                         <form action="{{ route('checkout.store') }}" method="post" id="form">
                                             @csrf
                                             <div>
                                                 <div class="row">
                                                     <div class="col-12 mb-3">
                                                         <label class="form-label" for="billing-name">Nom <span style="color: #cf2227">*</span></label>
-                                                        <input type="text" class="form-control" name="nom" placeholder="Enter name" required>
+                                                        <input type="text" class="form-control w-100" name="nom" placeholder="Enter name" required>
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <label class="form-label" for="billing-email-address">Email Address <span style="color: #cf2227">*</span></label>
-                                                        <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                                                        <input type="email" class="form-control w-100" name="email" placeholder="Enter email" required>
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <label class="form-label" for="billing-prenom">Prenom <span style="color: #cf2227">*</span></label>
-                                                        <input type="text" class="form-control" name="prenom" placeholder="Enter name" required>
+                                                        <input type="text" class="form-control w-100" name="prenom" placeholder="Enter name" required>
                                                     </div>
                                                     <div class="col-12 mb-3">
                                                         <label class="form-label" for="billing-phone">Phone <span style="color: #cf2227">*</span></label>
-                                                        <input type="text" class="form-control" name="phone" placeholder="Enter Phone no." required>
+                                                        <input type="text" class="form-control w-100" name="phone" placeholder="Enter Phone no." required>
                                                     </div>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="billing-address">Address <span style="color: #cf2227">*</span></label>
-                                                    <textarea class="form-control" name="adresse" rows="3" placeholder="Enter full address" id="adresseHidden" hidden></textarea>
-                                                    <textarea class="form-control" name="adresse" rows="3" placeholder="Enter full address" id="adresse" required></textarea>
+                                                    <textarea class="form-control w-100" name="adresse" rows="3" placeholder="Enter full address" id="adresseHidden" hidden></textarea>
+                                                    <textarea class="form-control w-100" name="adresse" rows="3" placeholder="Enter full address" id="adresse" required></textarea>
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="billing-address">Notes de commande (facultatif)</label>
-                                                    <textarea class="form-control" name="notes" rows="3" placeholder="Commentaires concernant votre commande, ex: consignes de livraison, les supplements..."></textarea>
+                                                    <textarea class="form-control w-100" name="notes" rows="3" placeholder="Commentaires concernant votre commande, ex: consignes de livraison, les supplements..."></textarea>
                                                 </div>
 
                                                 @php
@@ -149,9 +147,8 @@ telles que les détails de livraison et les préférences spéciales, pour que n
                                                 @endforeach
                                                 </textarea>
 
+                                            </div>
 
-
-                                </div>
                             </div>
                         </li>
 
