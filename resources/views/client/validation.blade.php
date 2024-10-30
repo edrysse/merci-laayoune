@@ -15,7 +15,7 @@ telles que les détails de livraison et les préférences spéciales, pour que n
 
 
 @section('validation')
-<link rel="stylesheet" type="text/css" href={{ asset('clientpage/css/validation.css') }}>
+<link rel="stylesheet" type="text/css" href="{{ secure_asset('clientpage/css/validation.css') }}">
 
 
 <div class="container cntnr">
