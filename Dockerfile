@@ -29,3 +29,4 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 EXPOSE 80
 
 CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
+RUN service php8.2-fpm start && service php8.2-fpm status
