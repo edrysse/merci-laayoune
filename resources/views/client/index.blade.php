@@ -658,7 +658,7 @@
                         </h3>
                     </div>
 
-                    <form action="{{secur_url( route('createreservation')) }}" class="wrap-form-booking" method="patch">
+                    <form action="{{ secure_url(route('createreservation')) }}" class="wrap-form-booking" method="patch">
                         <div class="row">
                             <div class="col-md-6">
                                 <!-- Date -->
