@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="container">
-        
+
         <br />
         <br />
         <br />
@@ -41,7 +41,7 @@
                 @foreach ($comnds as $item)
                     <tr>
                         <td data-label="Client info" style="white-space: wrap; overflow: auto;"> <br>
-                                        <b>Nom et Prenom :</b> <span style="color: #fff">{{ $item->nom }} {{ $item->prenom }}</span> 
+                                        <b>Nom et Prenom :</b> <span style="color: #fff">{{ $item->nom }} {{ $item->prenom }}</span>
                             <br> <br> <b>Tel :</b> <span style="color: #fff">{{ $item->phone }}</span>
                             <br> <br> <b>Email :</b> <span style="color: #fff">{{ $item->email }}</span>
                         </td>
@@ -55,10 +55,10 @@
                                 echo str_replace("|", "<br>", "$item->commande");
                                 @endphp
                             </span>
-                            
+
                         </td>
 
-                        
+
                         <td data-label="Commande Info" style="white-space: wrap; overflow: auto;"> <br>
                             <b>Commande ID :</b> <span style="color: #fff">{{ $item->oid }}</span> <br> <br>
                             <b>Effectuée à :</b> <span style="color: #fff">{{ $item->created_at }}</span> <br> <br>
@@ -68,23 +68,23 @@
                         <td data-label="Paiement Info" style="white-space: wrap; overflow: auto;"> <br>
                             <b>Méthode de paiement :</b> <span style="color: #fff">{{ $item->Pmethod }}</span> <br> <br> <br>
                             <b>état de paiement :</b> <span style="color: #fff">{{ $item->state }}</span> <br> <br>
-                            
+
                         </td>
                         <td data-label="Notes" style="white-space: wrap; overflow: auto; "> <br>
                             <span style="color:#fff">{{ $item->notes }}</span>
-                            
-                            
+
+
                         </td>
-                        <td> 
+                        <td>
                             {{-- <a class="btn btn-primary" href="{{ route('comnd.edit', $item->id) }}"><i
                                     class="fa-solid fa-pen-to-square"></i></a> --}}
-                        
-                            <form action="{{ route('comnd.payee', $item->id) }}" method="post">
+
+                            <form action="{{ secur_url(route('comnd.payee', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-success">Payée</button>
                                 @csrf
                                 @method('PATCH')
                             </form>
-                            <form action="{{ route('comnd.destroy', $item->id) }}" method="post">
+                            <form action="{{ secur_url(route('comnd.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')
@@ -100,6 +100,6 @@
                 {{ $msg }}
             </div>
         @endif
-        
+
     </div>
 @endsection

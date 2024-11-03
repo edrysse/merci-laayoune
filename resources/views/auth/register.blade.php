@@ -9,7 +9,7 @@
                 <div class="login100-pic" >
                     <img src={{ asset('clientpage/images/MERCI_IMG/logo_header/Logo-Merci-b4.png') }} alt="IMG">
                 </div>
-                <form method="POST" action="{{ route('register') }}" class="login100-form validate-form">
+                <form method="POST" action="{{ secure_url(route('register') )}}" class="login100-form validate-form">
                     @csrf
                     <span class="login100-form-title">
                         Admin register

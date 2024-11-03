@@ -52,7 +52,7 @@
                         <p>{{ $blog->description }} </p>
                     </div>
                     @if ($blog->id_user == Auth::id())
-                        <form action="{{ route('blog.destroy', $blog->id) }}" method="post">
+                        <form action="{{ secure_url(route('blog.destroy', $blog->id)) }}" method="post">
                             <a class="btn btn-success" href="{{ route('blog.edit', $blog->id) }}">edit</a>
 
                             <button type="submit" class="btn btn-danger">delete</button>

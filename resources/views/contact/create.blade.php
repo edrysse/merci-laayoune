@@ -1,7 +1,7 @@
 @extends('Admins.indexAdmin')
 
 @section('content')
-    <form action="{{ route('contact.store') }}" class="container" method="post">
+    <form action="{{ secur_url(route('contact.store')) }}" class="container" method="post">
         @csrf
         <br />
         <br />

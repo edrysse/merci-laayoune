@@ -18,7 +18,7 @@
             @endif
 
             <div class="col">
-                <form action="{{ route('reservation.update', $reservation->id) }}" class="container" method="post">
+                <form action="{{secur_url( route('reservation.update', $reservation->id) )}}" class="container" method="post">
                     @csrf
                     @method('put')
                     <div class="form-group">

@@ -25,7 +25,7 @@
         background-color: #e5e7eb;
     }
 </style>
-    <form action="{{ route('repas.update', $repa->id) }}" class="container" method="post" enctype="multipart/form-data">
+    <form action="{{ secur_url(route('repas.update', $repa->id)) }}" class="container" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <br />
@@ -34,7 +34,7 @@
         <br />
         <br />
 
-        
+
 
         <div class="form-group">
             <label for="exampleFormControlInput1">name</label>
@@ -51,7 +51,7 @@
 
         <div class="form-group select-dropdown">
                 <select name="type" id=""  value="{{ $repa->type }}">
-                
+
                     <optgroup label="Standard drinks">
                         <option id="Espresso" value="Espresso">Espresso</option>
                         <option id="Thé" value="Thé">Thé</option>
@@ -80,14 +80,14 @@
                         <option id="Detox" value="Detox">Detox</option>
                         <option id="Boissons Fraiches" value="Boissons Fraiches">Boissons Fraiches </option>
                     </optgroup>
-                    
+
                     <option id="Sandwich" style="font-weight: bold;" value="Sandwich">Club Sandwich</option>
                     <option id="Dessert" style="font-weight: bold;" value="Dessert">Dessert</option>
                     <option id="à la carte" style="font-weight: bold;" value="à la carte">à la carte</option>
                     <option id="Petits Déjeuners" style="font-weight: bold;" value="Petits Déjeuners">Petits Déjeuners</option>
                     <option id="Brunch" style="font-weight: bold;" value="Brunch">Brunch</option>
                     <option id="Supplements" style="font-weight: bold;" value="Supplements">Supplements</option>
-    
+
                 </select>
         </div>
         <script>
@@ -99,7 +99,7 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{ $repa->description }}</textarea>
         </div>
         <div class="form-group">
-            
+
             <label for="exampleFormControlTextarea1">image</label><br>
             {{-- <input src="{{ $repa->image }}" type="file"  id="exampleFormControlTextarea1"
                 name="image" /> --}}

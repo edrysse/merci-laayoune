@@ -2,13 +2,13 @@
 
 @section('meta')
 <title>Merci Laayoune - Accueil</title>
-<meta name="description" content="Merci Laayoune est un élégant café salon de thé avec une charmante terrasse 
+<meta name="description" content="Merci Laayoune est un élégant café salon de thé avec une charmante terrasse
     située au cœur de la ville de Laayoune. Notre ambiance chaleureuse et notre menu raffiné vous invitent à vous
-    détendre et à savourer des moments de convivialité. Profitez de notre vaste sélection de boissons chaudes et froides, 
-    de délicieuses pâtisseries fraîchement préparées et de plats légers. Que ce soit pour une pause délicieuse ou une 
+    détendre et à savourer des moments de convivialité. Profitez de notre vaste sélection de boissons chaudes et froides,
+    de délicieuses pâtisseries fraîchement préparées et de plats légers. Que ce soit pour une pause délicieuse ou une
     rencontre entre amis, Merci Laayoune vous accueille avec un service attentionné et un cadre accueillant.">
-    <meta name="keywords" content="MerciLaayoune, Café Laayoune, Salon de thé, Terrasse en plein air, Boissons chaudes, 
-        Pâtisseries fraîches, Cuisine locale, Ambiance chaleureuse, Convivialité, Rencontre entre amis, 
+    <meta name="keywords" content="MerciLaayoune, Café Laayoune, Salon de thé, Terrasse en plein air, Boissons chaudes,
+        Pâtisseries fraîches, Cuisine locale, Ambiance chaleureuse, Convivialité, Rencontre entre amis,
         Détente, Service attentionné, Menu raffiné, Élégance.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
@@ -51,74 +51,74 @@
         .activity-checkout {
             list-style: none
         }
-        
+
         .activity-checkout .checkout-icon {
             position: absolute;
             top: -4px;
             left: -24px
         }
-        
+
         .activity-checkout .checkout-item {
             position: relative;
             padding-bottom: 24px;
             padding-left: 35px;
             border-left: 2px solid #f5f6f8
         }
-        
+
         .activity-checkout .checkout-item:first-child {
             border-color: #3b76e1
         }
-        
+
         .activity-checkout .checkout-item:first-child:after {
             background-color: #3b76e1
         }
-        
+
         .activity-checkout .checkout-item:last-child {
             border-color: transparent
         }
-        
+
         .activity-checkout .checkout-item.crypto-activity {
             margin-left: 50px
         }
-        
+
         .activity-checkout .checkout-item .crypto-date {
             position: absolute;
             top: 3px;
             left: -65px
         }
-        
-        
-        
+
+
+
         .avatar-xs {
             height: 1rem;
             width: 1rem
         }
-        
+
         .avatar-sm {
             height: 2rem;
             width: 2rem
         }
-        
+
         .avatar {
             height: 3rem;
             width: 3rem
         }
-        
+
         .avatar-md {
             height: 4rem;
             width: 4rem
         }
-        
+
         .avatar-lg {
             height: 5rem;
             width: 5rem
         }
-        
+
         .avatar-xl {
             height: 6rem;
             width: 6rem
         }
-        
+
         .avatar-title {
             -webkit-box-align: center;
             -ms-flex-align: center;
@@ -135,7 +135,7 @@
             justify-content: center;
             width: 100%
         }
-        
+
         .avatar-group {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -144,7 +144,7 @@
             flex-wrap: wrap;
             padding-left: 8px
         }
-        
+
         .avatar-group .avatar-group-item {
             margin-left: -8px;
             border: 2px solid #fff;
@@ -152,13 +152,13 @@
             -webkit-transition: all .2s;
             transition: all .2s
         }
-        
+
         .avatar-group .avatar-group-item:hover {
             position: relative;
             -webkit-transform: translateY(-2px);
             transform: translateY(-2px)
         }
-        
+
         .card-radio {
             background-color: #fff;
             border: 2px solid #eff0f2;
@@ -169,15 +169,15 @@
             white-space: nowrap;
             display: block
         }
-        
+
         .card-radio:hover {
             cursor: pointer
         }
-        
+
         .card-radio-label {
             display: block
         }
-        
+
         .edit-btn {
             width: 35px;
             height: 35px;
@@ -187,16 +187,16 @@
             right: 25px;
             margin-top: -50px
         }
-        
+
         .card-radio-input {
             display: none
         }
-        
+
         .card-radio-input:checked+.card-radio {
             border-color: #3b76e1!important
         }
-        
-        
+
+
         .font-size-16 {
             font-size: 16px!important;
         }
@@ -205,12 +205,12 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        
+
         a {
             text-decoration: none!important;
         }
-        
-        
+
+
         .form-control {
             display: block;
             width: 100%;
@@ -231,7 +231,7 @@
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
         }
-        
+
         .edit-btn {
             width: 35px;
             height: 35px;
@@ -241,7 +241,7 @@
             right: 25px;
             margin-top: -50px;
         }
-        
+
         .ribbon {
             position: absolute;
             right: -26px;
@@ -255,26 +255,26 @@
             font-size: 13px;
             font-weight: 500
         }
-    
-    
-    
-    
+
+
+
+
         @media (min-width: 1200px)
             { .mod-8{
                 flex: 0 0 60%;
                 max-width: 60%;
             }
             }
-            
+
         @media (min-width: 1200px)
             { .mod-4{
                 flex: 0 0 40%;
                 max-width: 40%;
             }
             }
-        
-    
-    
+
+
+
         .mod-4c {
         max-width: 50%;
         flex: 0 0 50%;
@@ -449,7 +449,7 @@
                 <div class="mb-4" >
                     <img class="mercilogo-autre"  src="clientpage/images/MERCI_IMG/LOGO/Logo-Merci-b1.png" alt="" >
                 </div>
-            
+
                 <div style="    display: flex;
                 align-items: center;">
                     <a href="https://www.facebook.com/mercilaayoune"><img src="clientpage/images/MERCI_IMG/social-media-merci/facebook-app-symbol-merci.png" alt="" width="22px"></a>
@@ -460,7 +460,7 @@
                 </div>
             </div>
 
-            
+
 
         </div>
 
@@ -658,7 +658,7 @@
                         </h3>
                     </div>
 
-                    <form action="{{ route('createreservation') }}" class="wrap-form-booking" method="patch">
+                    <form action="{{secur_url( route('createreservation')) }}" class="wrap-form-booking" method="patch">
                         <div class="row">
                             <div class="col-md-6">
                                 <!-- Date -->
@@ -799,7 +799,7 @@
                     <div class="splide__track">
                         <div class="splide__list">
                             @foreach ($reviews as $review)
-                                
+
                             <div class="col-sm-4 splide__slide m-2">
                                 <div class="card  text-dark">
                                     <a style="text-decoration: none; color:#000000" href="https://shorturl.at/giwF9">
@@ -810,15 +810,15 @@
                                         }" class="mb-1">
                                                  <div class="pic-blo5 bo4 wrap-cir-pic hov-img-zoom user-border" >
                                                     @if (is_null($review->image))
-                                                    
+
                                                         <img src="clientpage/images/profile.webp" alt="{{ $review->image }}" class="user">
 
-                                                    
-                                                        
+
+
                                                     @else
-                                                    
+
                                                     <img src="{{ $review->image }}" alt="{{ $review->image }}" class="user">
-                        
+
                                                     @endif
                                                 </div>
                                                 <div class="my-2" style="display: flex;
@@ -840,14 +840,14 @@
                                                         @endfor
                                                     </span>
                                                 </div>
-                                                
+
                                             </div>
-                                       
-                                        
-                                        
+
+
+
                                         <p class="card-text">{{$review->comment}}</p>
-                                        
-                                        
+
+
                                     </div>
                                 </a>
                                 </div>
@@ -863,7 +863,7 @@
     </section>
 
 
-  
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
@@ -886,7 +886,7 @@
         },
     });
     splide.mount();
-    
+
 </script>
 
 
@@ -895,7 +895,7 @@
 
     <script src="assets/js/jquery.js"></script>
     @if ($msg = Session::get('msg'))
-    
+
             <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -916,7 +916,7 @@
                         <button class="btn btn-outline-success">Fermer</button>
                     </div>
                 </div>
-            
+
             </div>
         </div>
       </div>
@@ -927,6 +927,6 @@
                 });
             </script>';
         @endphp
-        
+
     @endif
 @endsection

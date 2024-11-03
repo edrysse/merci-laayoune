@@ -1,6 +1,6 @@
 @extends('Admins.indexAdmin')
 @section('content')
-    <form action="{{ route('category.update', $category->id) }}" class="container" method="post">
+    <form action="{{ secure_url(route('category.update', $category->id)) }}" class="container" method="post">
         @csrf
         @method('put')
         <br><br><br><br><br>

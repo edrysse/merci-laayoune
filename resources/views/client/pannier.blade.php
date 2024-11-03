@@ -3,9 +3,9 @@
 
 @section('meta')
 <title>Merci Laayoune - Pannier</title>
-<meta name="description" content="Consultez votre panier au Merci Laayoune pour voir les articles que vous avez choisis. Visualisez les produits, 
+<meta name="description" content="Consultez votre panier au Merci Laayoune pour voir les articles que vous avez choisis. Visualisez les produits,
 leurs prix et les quantités sélectionnées avant de passer à l'étape suivante de votre expérience de commande.">
-    <meta name="keywords" content="Panier d'achats, Articles choisis, Prix produits, Quantités, Expérience de commande."> 
+    <meta name="keywords" content="Panier d'achats, Articles choisis, Prix produits, Quantités, Expérience de commande.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Merci Laayoune - Pannier">
@@ -24,14 +24,14 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
             align-items: center;">
                 <h2 class="tit6 t-center">
                     Pannier
-                    
+
                 </h2>
-        
+
                 <div class="mb-4" >
                     {{-- Merci Laayoune --}}
                     <img class="mercilogo-autre"  src="clientpage/images/MERCI_IMG/LOGO/Logo-Merci-b1.png" alt="" >
                 </div>
-                
+
                 <div style="    display: flex;
                 align-items: center;">
                     <a href="https://www.facebook.com/mercilaayoune"><img src="clientpage/images/MERCI_IMG/social-media-merci/facebook-app-symbol-merci.png" alt="" width="22px"></a>
@@ -40,7 +40,7 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
                     <a href=""><img class="ml-2" src="clientpage/images/MERCI_IMG/social-media-merci/snapchat.png" alt="" width="22px"></a>
                     <a href="https://shorturl.at/cnrt1"><img class="ml-2" src="clientpage/images/MERCI_IMG/social-media-merci/pin-merci.png" alt="" width="22px"></a>
                 </div>
-            
+
         </div>
     </section>
     <br><br><br>
@@ -96,8 +96,8 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
                     {{ $cartItem->price }} DHS
                 </td>
                 <td data-label="quantite" class="pannier">
-            
-                    <form action="{{ route('pannier.update', $cartItem->rowId) }}" method="post">
+
+                    <form action="{{ secur_url(route('pannier.update', $cartItem->rowId)) }}" method="post">
 
                         <div class="increment">
                             <div class="number-input">
@@ -107,7 +107,7 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
 
                             </div>
                             <button type="submit" class="btn btn-outline-dark">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20"
                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path
                                         d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -124,7 +124,7 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
                         {{ $cartItem->price * $cartItem->qty }} DHS
                     </td>
                     <td data-label="delete" class="actions pannier" data-th="">
-                        <form action="{{ route('pannier.destroy', $cartItem->rowId) }}" method="post">
+                        <form action="{{secur_url( route('pannier.destroy', $cartItem->rowId)) }}" method="post">
                             <button type="submit" class="btn btn-outline-dark">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20"
                                     fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
@@ -135,7 +135,7 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
                             @csrf
                             @method('DELETE')
                         </form>
-            
+
                     </td>
 
             </tr>
@@ -148,7 +148,7 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
                 <h5 class="fw-bold mb-0">Total: {{ $total }} DHS</h5>
                 <span></span>
             </div>
-        
+
             <div class="button">
                 <div class="mr-3">
 
@@ -158,10 +158,10 @@ leurs prix et les quantités sélectionnées avant de passer à l'étape suivant
                     <a href="{{ route('comnd.create') }}" class="btn3 flex-c-m size13 txt11 trans-0-4" style="width: 90px">Valider</a>
                 </div>
             </div>
-            
+
         </div>
-        
-        
+
+
     </div>
 
 

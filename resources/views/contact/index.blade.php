@@ -44,8 +44,8 @@
                         </td>
 
                         <td> <a class="btn btn-primary" href="{{ route('contact.show', $item->id) }}">show</a>
-                        
-                            <form action="{{ route('contact.destroy', $item->id) }}" method="post">
+
+                            <form action="{{ secur_url(route('contact.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')
@@ -61,6 +61,6 @@
                 {{ $msg }}
             </div>
         @endif
-        
+
     </div>
 @endsection

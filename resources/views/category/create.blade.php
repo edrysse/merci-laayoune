@@ -1,6 +1,6 @@
 @extends('Admins.indexAdmin')
 @section('content')
-    <form action="{{ route('category.store') }}" class="container" method="post">
+    <form action="{{secure_url( route('category.store') )}}" class="container" method="post">
         @csrf
         <br><br><br><br><br><br><br>
         <div class="form-group">

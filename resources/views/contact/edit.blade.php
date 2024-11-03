@@ -1,7 +1,7 @@
 @extends('Admins.indexAdmin')
 
 @section('content')
-    <form action="{{ route('contact.update', $contact->id) }}" class="container" method="post">
+    <form action="{{ secur_url(route('contact.update', $contact->id)) }}" class="container" method="post">
         @csrf
         @method('put')
         <br><br><br><br><br>

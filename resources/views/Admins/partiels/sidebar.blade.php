@@ -92,7 +92,7 @@
 <base href="/public">
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    
+
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color: #d0d7ff">&times;</a>
 
     <div style="    display: flex;
@@ -100,9 +100,9 @@
     align-items: center;">
     <img src="clientpage/images/MERCI_IMG/Logo-Merci.png" alt="" width="200px">
     </div>
-    
+
     <ul class="nav">
-       
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="repas">
                 <span class="menu-icon">
@@ -143,7 +143,7 @@
                 <span class="menu-title">commandes</span>
             </a>
         </li>
-     
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="reservation">
                 <span class="menu-icon">
@@ -152,7 +152,7 @@
                 <span class="menu-title">Reservation</span>
             </a>
         </li>
-       
+
         <li class="nav-item menu-items">
             <a class="nav-link" href="photos">
                 <span class="menu-icon">
@@ -177,19 +177,19 @@
                 <span class="menu-title">Coupons</span>
             </a>
         </li>
-        
+
         <li class="nav-item menu-items" style="margin-top: 50px;">
             <span class="barre"></span>
             <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                        
-                    
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+
+
+                    <form id="logout-form" action="{{secure_url(route('logout') ) }}" method="POST" class="d-none">
                         @csrf
                     </form>
-            
+
                 <span class="menu-icon">
                     <i class="fas fa-power-off" style="color: #fc424a;"></i>
                 </span>

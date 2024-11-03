@@ -12,8 +12,8 @@
     @media screen and (max-width: 992px){
         td {
             position: relative !important;
-            
-        } 
+
+        }
         td .btn {
         width: 100%;
     }
@@ -38,11 +38,11 @@
             <a class="btn btn-primary btn-lg p-3" href="{{ route('repas.create') }}" role="button">ajouter un repas</a>
         </div>
         <div class="form-group select-dropdown" style="margin-bottom: 16px">
-            
 
-            <form action="{{ route('repa.type') }}">
+
+            <form action="{{secur_url( route('repa.type')) }}">
                 <select name="type" id="type">
-                    
+
                     <optgroup label="Standard drinks">
                         <option value="Espresso">Espresso</option>
                         <option value="Thé">Thé</option>
@@ -73,7 +73,7 @@
                         <option value="Detox">Detox</option>
                         <option value="Boissons Fraiches">Boissons Fraiches </option>
                     </optgroup>
-                    
+
                     <option style="font-weight: bold;" value="Sandwich">Club Sandwich</option>
                     <option style="font-weight: bold;" value="Dessert">Dessert</option>
                     <option style="font-weight: bold;" value="à la carte">à la carte</option>
@@ -89,7 +89,7 @@
                     </button>
                 </div>
             </form>
-        
+
 
         <table class="table" >
             <thead>
@@ -100,13 +100,13 @@
                     <th scope="col">type</th>
                     <th scope="col" style="width: 330px">description</th>
                     <th scope="col"></th>
-                    
+
                 </tr>
             </thead>
             <tbody>
                 @foreach ($repas as $item)
-                    
-                
+
+
                     <tr>
                         <td style="display: flex;justify-content: center; border-top: 0px;"><img style="border-radius: 0%; max-width:100px; max-height:100px; width: auto; height: auto;" src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail"
                             style="width:100px;height:100px; !important"></td>
@@ -114,20 +114,20 @@
                         <td data-label="prix" style="border-top: 0px;">{{ $item->prix }}</td>
                         <td data-label="type" style="border-top: 0px;">{{ $item->type }}</td>
                         <td data-label="description" style="white-space: wrap; border-top: 0px;"><br>{{ $item->description }}</td>
-                        
+
                         {{-- <td style="display: flex;flex-direction: column; border-top: 0px;" class="td-btn"><a class="btn btn-success" href="{{ route('repas.edit', $item->id) }}">edit</a> --}}
                         <td style="display: flex;flex-direction: column; border-top: 0px;padding: 0;" class="td-btn">
-                            
+
                             {{-- <a class="btn btn-success" href="{{ route('repas.edit', $item->id) }}">edit</a> --}}
-                            <form action="{{ route('repas.edit', $item->id) }}" >
+                            <form action="{{ secur_url(route('repas.edit', $item->id)) }}" >
                                 <button type="submit" class="btn btn-success">edit</button>
                                 @csrf
-                                @method('PATCH')    
+                                @method('PATCH')
                             </form>
-                        
+
                             <a class="btn btn-primary" href="{{ route('repas.show', $item->id) }}">show</a>
-                        
-                            <form action="{{ route('repas.destroy', $item->id) }}" method="post">
+
+                            <form action="{{ secur_url(route('repas.destroy', $item->id) )}}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

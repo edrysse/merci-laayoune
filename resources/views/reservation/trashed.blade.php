@@ -36,7 +36,7 @@
                             <td> <a class="btn btn-primary" href="{{ route('reservation.show', $item->id) }}"><i
                                         class="fa-solid fa-eye fa-1x"></i></a>&nbsp;</td>
                             <td>
-                                <form action="{{ route('reservation.destroy', $item->id) }}" method="post">
+                                <form action="{{ secur_url(route('reservation.destroy', $item->id)) }}" method="post">
                                     <button type="submit" class="btn btn-danger">delete</button>
                                     @csrf
                                     @method('DELETE')

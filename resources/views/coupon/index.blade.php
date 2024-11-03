@@ -10,13 +10,13 @@
     .td-btn {
         /* position: absolute; */
         align-items: center;
-        
+
     }
     @media screen and (max-width: 992px){
         td {
             position: relative !important;
-            
-        } 
+
+        }
         td .btn {
         width: 100%;
     }
@@ -43,28 +43,28 @@
             <div class="alert alert-danger">
 
                 <ul>
-                    
+
                     <li>Merci de saisir un pourcentage valide</li>
-                    
+
                 </ul>
             </div>
         @endif
         @if ($msg = Session::get('error'))
             <div class="alert alert-danger">
                 <ul>
-                    
+
                     <li>{{ $msg }}</li>
-                    
+
                 </ul>
-                
+
             </div>
         @endif
 
-        
+
         <button class="btn btn-primary btn-lg p-3" onclick="afficheCodePromo()" >
             ajouter Code promo
         </button>
-        <form action="{{ route('coupon.create') }}">
+        <form action="{{ secur_url()route('coupon.create') }}">
             <div class="py-3 mb-3 cardcoupon" id="coupon" style="display: none">
 
                 <div>
@@ -74,10 +74,10 @@
                 <div>
                     <input type="radio" name="generate" id="Mradio"> <span> Manuelle</span> <br>
                 </div>
-                
 
-                <input type="text" class="form-control" name="code" id="Minput" placeholder="Saisir le code promo">   
-                <input type="text" class="form-control" name="discount" placeholder="Saisir le pourcentage">   
+
+                <input type="text" class="form-control" name="code" id="Minput" placeholder="Saisir le code promo">
+                <input type="text" class="form-control" name="discount" placeholder="Saisir le pourcentage">
                     <button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4" style="margin: 20px auto 0;">
                         Valider
                     </button>
@@ -87,10 +87,10 @@
             var x = document.getElementById("coupon");
             if (x.style.display === "none") {
                 x.style.display = "block";
-        
+
             } else {
                 x.style.display = "none";
-        
+
             }
                 }
 
@@ -130,7 +130,7 @@
                         <td style="display: flex;justify-content: center; border-top: 0px;">{{ $item->code }}</td>
                         <td style="border-top: 0px; ">{{ $item->discount }}</td>
                         <td>
-                            <form action="{{ route('coupon.destroy', $item->id) }}" method="post">
+                            <form action="{{secur_url( route('coupon.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

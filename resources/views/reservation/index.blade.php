@@ -14,8 +14,8 @@
     @media screen and (max-width: 992px){
         td {
             position: relative !important;
-            
-        } 
+
+        }
         td .btn {
         width: 100%;
     }
@@ -44,7 +44,7 @@
 
             <a class="btn btn-primary btn-lg p-3" href="{{ route('reservation.create') }}" role="button">ajouter réservation</a>
 
-            
+
 
         </div>
         @if ($reservations->count() > 0)
@@ -72,11 +72,11 @@
 
                             <td style="display: flex;flex-direction: column; border-top: 0px;" class="td-btn"><a class="btn btn-success" href="{{ route('reservation.edit', $item->id) }}"><i
                                         class="fa-solid fa-pen-to-square"></i></a>&nbsp;
-                            
+
                              <a class="btn btn-primary" href="{{ route('reservation.show', $item->id) }}"><i
                                         class="fa-solid fa-eye fa-1x"></i></a>&nbsp;
-                            
-                                <form action="{{ route('reservation.destroy', $item->id) }}" method="post">
+
+                                <form action="{{secur_url( route('reservation.destroy', $item->id)) }}" method="post">
                                     <button type="submit" class="btn btn-danger">delete</button>
                                     @csrf
                                     @method('DELETE')
@@ -92,7 +92,7 @@
                     {{ $msg }}
                 </div>
             @endif
-            
+
     </div>
 @else
     <div class="alert alert-danger">no reservations</div>

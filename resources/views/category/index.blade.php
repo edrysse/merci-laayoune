@@ -20,7 +20,7 @@
                         <td><a class="btn btn-success" href="{{ route('category.edit', $item->id) }}">edit</a>
                         </td>
                         <td>
-                            <form action="{{ route('category.destroy', $item->id) }}" method="post">
+                            <form action="{{ secur_url(route('category.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

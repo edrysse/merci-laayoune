@@ -1,6 +1,6 @@
 @extends('Admins.indexAdmin')
 @section('content')
-    <form action="{{ route('repas.store') }}" class="container" method="post" enctype="multipart/form-data">
+    <form action="{{ secur_url(route('repas.store')) }}" class="container" method="post" enctype="multipart/form-data">
         @csrf
         <br />
         <br />
@@ -12,7 +12,7 @@
             /* background-color: white; */
             border-radius: 10px;
             /* border: 2px solid #d9d9d9; */
-            
+
         }
         .form-control:focus {
         /* background-color: rgb(255, 255, 255); */
@@ -25,7 +25,7 @@
     option:checked, option:hover {
         background-color: #d9d9d9;
         }
-        
+
     .select-dropdown,
     .select-dropdown * {
         margin: 0;
@@ -138,7 +138,7 @@
         </div>
         <label for="exampleFormControlInput1">type</label>
         <div class="form-group select-dropdown" style="margin-bottom: 16px">
-            
+
             {{-- <select name="type" id="">
                 <option value="lunch">lunch</option>
                 <option value="dinner">dinner</option>
@@ -150,7 +150,7 @@
 
             </select> --}}
             <select name="type" id="">
-                
+
                 <optgroup label="Standard drinks">
                     <option value="Espresso">Espresso</option>
                     <option value="Thé">Thé</option>
@@ -181,7 +181,7 @@
                     <option value="Detox">Detox</option>
                     <option value="Boissons Fraiches">Boissons Fraiches </option>
                 </optgroup>
-                
+
                 <option style="font-weight: bold;" value="Sandwich">Club Sandwich</option>
                 <option style="font-weight: bold;" value="Dessert">Dessert</option>
                 <option style="font-weight: bold;" value="à la carte">à la carte</option>
@@ -208,7 +208,7 @@
                 {{ $msg }}
             </div>
         @endif
-        
+
     </form>
-    
+
 @endsection

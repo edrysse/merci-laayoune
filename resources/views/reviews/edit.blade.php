@@ -1,6 +1,6 @@
 @extends('Admins.indexAdmin')
 @section('content')
-    <form action="{{ route('reviews.update', $review->id) }}" class="container" method="post" enctype="multipart/form-data">
+    <form action="{{secur_url( route('reviews.update', $review->id) )}}" class="container" method="post" enctype="multipart/form-data">
         @csrf
         @method('put');
         <br><br><br><br>
@@ -13,7 +13,7 @@
             <label for="exampleFormControlInput1">Evaluation</label>
 
                 <div class="form-group select-dropdown" style="margin-bottom: 16px">
-            
+
                     <select name="rate" id="" >
                         <option value="1">1</option>
                         <option value="2">2</option>

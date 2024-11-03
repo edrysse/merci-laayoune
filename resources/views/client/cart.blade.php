@@ -3,10 +3,10 @@
 @php
     function random_strings($length_of_string)
         {
-        
+
             // String of all alphanumeric character
             $str_result = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-        
+
             // Shuffle the $str_result and returns substring
             // of specified length
             return substr(str_shuffle($str_result),
@@ -39,8 +39,8 @@
                         </button>
                     </a>
                 </div>
-                
-            </div> 
+
+            </div>
         @endif
         <div class="container px-4 px-lg-5 my-5">
             <div class="row gx-4 gx-lg-5 align-items-center">
@@ -53,8 +53,8 @@
 
                     </div>
                     <p class="lead">{{ $repas->description }}</p>
-                    <form action="{{ route('add_pannier', $repas->id) }}" method='get'>
-                        
+                    <form action="{{ secur_url(route('add_pannier', $repas->id)) }}" method='get'>
+
                         <div class="quantit">
 
                             <div class="number-input">
@@ -62,7 +62,7 @@
                                 <input class="quantity" min="1" name="quantite" value="1" type="number">
                                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" type="button"></button>
 
-                               
+
                             </div>
 
                              <button class="btn btn-danger q flex-shrink-0" type="submit">
@@ -71,14 +71,14 @@
                             </button>
 
                         </div>
-                        
-                           
+
+
 
                         @if (count($cartItems) == 0)
                             {{$OID = date('dmYHis').random_strings(1);}}
                             <input type="hidden" value="{{$OID}}" name="oid">
                         @endif
-                            
+
 
                     </form>
 
@@ -86,5 +86,5 @@
             </div>
         </div>
     </section>
-   
+
 @endsection

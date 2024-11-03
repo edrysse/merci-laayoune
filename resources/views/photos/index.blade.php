@@ -10,13 +10,13 @@
     .td-btn {
         /* position: absolute; */
         align-items: center;
-        
+
     }
     @media screen and (max-width: 992px){
         td {
             position: relative !important;
-            
-        } 
+
+        }
         td .btn {
         width: 100%;
     }
@@ -58,10 +58,10 @@
                                 style="width:100px; height:100px; !important" class="img-tumbnail"></td>
                         {{-- <td style="border-top: 0px; ">{{ $item->type }}</td> --}}
                         <td style="border-top: 0px;"><a class="btn btn-success" href="{{ route('photos.edit', $item->id) }}">edit</a>
-                        
 
-                        
-                            <form action="{{ route('photos.destroy', $item->id) }}" method="post">
+
+
+                            <form action="{{secur_url( route('photos.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

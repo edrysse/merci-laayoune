@@ -3,9 +3,9 @@
 
 @section('meta')
 <title>Merci Laayoune - Reservation</title>
-<meta name="description" content="Réservez votre table au Merci Laayoune et préparez-vous à vivre une expérience gustative exceptionnelle dans notre café 
+<meta name="description" content="Réservez votre table au Merci Laayoune et préparez-vous à vivre une expérience gustative exceptionnelle dans notre café
 salon de thé. Choisissez votre date, heure et nombre de convives pour profiter de notre ambiance accueillante et de notre délicieux menu.">
-<meta name="keywords" content="Réservation table, Réserver café Laayoune, Expérience gustative, Ambiance accueillante, 
+<meta name="keywords" content="Réservation table, Réserver café Laayoune, Expérience gustative, Ambiance accueillante,
 Menu délicieux, Nombre de convives, Café salon de thé.">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
@@ -47,74 +47,74 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
         .activity-checkout {
             list-style: none
         }
-        
+
         .activity-checkout .checkout-icon {
             position: absolute;
             top: -4px;
             left: -24px
         }
-        
+
         .activity-checkout .checkout-item {
             position: relative;
             padding-bottom: 24px;
             padding-left: 35px;
             border-left: 2px solid #f5f6f8
         }
-        
+
         .activity-checkout .checkout-item:first-child {
             border-color: #3b76e1
         }
-        
+
         .activity-checkout .checkout-item:first-child:after {
             background-color: #3b76e1
         }
-        
+
         .activity-checkout .checkout-item:last-child {
             border-color: transparent
         }
-        
+
         .activity-checkout .checkout-item.crypto-activity {
             margin-left: 50px
         }
-        
+
         .activity-checkout .checkout-item .crypto-date {
             position: absolute;
             top: 3px;
             left: -65px
         }
-        
-        
-        
+
+
+
         .avatar-xs {
             height: 1rem;
             width: 1rem
         }
-        
+
         .avatar-sm {
             height: 2rem;
             width: 2rem
         }
-        
+
         .avatar {
             height: 3rem;
             width: 3rem
         }
-        
+
         .avatar-md {
             height: 4rem;
             width: 4rem
         }
-        
+
         .avatar-lg {
             height: 5rem;
             width: 5rem
         }
-        
+
         .avatar-xl {
             height: 6rem;
             width: 6rem
         }
-        
+
         .avatar-title {
             -webkit-box-align: center;
             -ms-flex-align: center;
@@ -131,7 +131,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             justify-content: center;
             width: 100%
         }
-        
+
         .avatar-group {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -140,7 +140,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             flex-wrap: wrap;
             padding-left: 8px
         }
-        
+
         .avatar-group .avatar-group-item {
             margin-left: -8px;
             border: 2px solid #fff;
@@ -148,13 +148,13 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             -webkit-transition: all .2s;
             transition: all .2s
         }
-        
+
         .avatar-group .avatar-group-item:hover {
             position: relative;
             -webkit-transform: translateY(-2px);
             transform: translateY(-2px)
         }
-        
+
         .card-radio {
             background-color: #fff;
             border: 2px solid #eff0f2;
@@ -165,15 +165,15 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             white-space: nowrap;
             display: block
         }
-        
+
         .card-radio:hover {
             cursor: pointer
         }
-        
+
         .card-radio-label {
             display: block
         }
-        
+
         .edit-btn {
             width: 35px;
             height: 35px;
@@ -183,16 +183,16 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             right: 25px;
             margin-top: -50px
         }
-        
+
         .card-radio-input {
             display: none
         }
-        
+
         .card-radio-input:checked+.card-radio {
             border-color: #3b76e1!important
         }
-        
-        
+
+
         .font-size-16 {
             font-size: 16px!important;
         }
@@ -201,12 +201,12 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        
+
         a {
             text-decoration: none!important;
         }
-        
-        
+
+
         .form-control {
             display: block;
             width: 100%;
@@ -227,7 +227,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
             transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
         }
-        
+
         .edit-btn {
             width: 35px;
             height: 35px;
@@ -237,7 +237,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             right: 25px;
             margin-top: -50px;
         }
-        
+
         .ribbon {
             position: absolute;
             right: -26px;
@@ -251,26 +251,26 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             font-size: 13px;
             font-weight: 500
         }
-    
-    
-    
-    
+
+
+
+
         @media (min-width: 1200px)
             { .mod-8{
                 flex: 0 0 60%;
                 max-width: 60%;
             }
             }
-            
+
         @media (min-width: 1200px)
             { .mod-4{
                 flex: 0 0 40%;
                 max-width: 40%;
             }
             }
-        
-    
-    
+
+
+
         .mod-4c {
         max-width: 50%;
         flex: 0 0 50%;
@@ -292,14 +292,14 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             align-items: center;">
                 <h2 class="tit6 t-center">
                     Reservation
-                    
+
                 </h2>
-        
+
                 <div class="mb-4" >
                     {{-- Merci Laayoune --}}
                     <img class="mercilogo-autre"  src="clientpage/images/MERCI_IMG/LOGO/Logo-Merci-b1.png" alt="" >
                 </div>
-                
+
                 <div style="    display: flex;
                 align-items: center;">
                     <a href="https://www.facebook.com/mercilaayoune"><img src="clientpage/images/MERCI_IMG/social-media-merci/facebook-app-symbol-merci.png" alt="" width="22px"></a>
@@ -308,11 +308,11 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
                     <a href="https://t.snapchat.com/Df0EWYBp"><img class="ml-2" src="clientpage/images/MERCI_IMG/social-media-merci/snapchat.png" alt="" width="22px"></a>
                     <a href="https://shorturl.at/cnrt1"><img class="ml-2" src="clientpage/images/MERCI_IMG/social-media-merci/pin-merci.png" alt="" width="22px"></a>
                 </div>
-            
+
         </div>
 
 
-    
+
 
 
 
@@ -333,7 +333,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
                         </h3>
                     </div>
 
-                    <form action="{{ route('createReservation') }}" class="wrap-form-reservation size22 m-l-r-auto"
+                    <form action="{{ secur_url(route('createReservation') )}}" class="wrap-form-reservation size22 m-l-r-auto"
                         method="patch">
                         <div class="row">
                             <div class="col-md-4">
@@ -462,7 +462,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             flex-direction: column;
             align-items: center;">
                 <h4 class="txt5 m-b-18">
-                    
+
                     RÉSERVER autrement
                 </h4>
 
@@ -502,7 +502,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
                     <button class="btn btn-outline-success">Fermer</button>
                 </div>
             </div>
-        
+
         </div>
     </div>
   </div>
@@ -513,7 +513,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
             });
         </script>';
     @endphp
-    
+
 @endif
 
 @endsection

@@ -11,8 +11,8 @@
     @media screen and (max-width: 992px){
         td {
             position: relative !important;
-            
-        } 
+
+        }
         td .btn {
         width: 100%;
     }
@@ -45,7 +45,7 @@
                     <th scope="col">image</th>
                     <th scope="col">nom</th>
                     <th scope="col">bio</th>
-                    
+
                     <th></th>
 
                 </tr>
@@ -59,13 +59,13 @@
 
                         <td data-label="Nom" style="border-top: 0px;">{{ $item->nom }}</td>
                         <td data-label="Bio" style="white-space: wrap; border-top: 0px;"><br>{{ $item->bio }}</td>
-                        
+
 
                         <td style="display: flex; flex-direction: column; border-top: 0px; " class="td-btn"><a class="btn btn-success" href="{{ route('chef.edit', $item->id) }}">edit</a>
-                        
+
                          <a class="btn btn-primary" href="{{ route('chef.show', $item->id) }}">show</a>
-                        
-                            <form action="{{ route('chef.destroy', $item->id) }}" method="post">
+
+                            <form action="{{secur_url( route('chef.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

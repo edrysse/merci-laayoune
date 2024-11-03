@@ -10,13 +10,13 @@
     .td-btn {
         /* position: absolute; */
         align-items: center;
-        
+
     }
     @media screen and (max-width: 992px){
         td {
             position: relative !important;
-            
-        } 
+
+        }
         td .btn {
         width: 100%;
     }
@@ -58,24 +58,24 @@
                     <tr>
                         <td data-label="Nom complet" style="border-top: 0px; ">
                             @if (is_null($item->image))
-                            
+
                                 <img src="clientpage/images/profile.webp" alt="{{ $item->image }}" class="img-tumbnail"
                             style=" width:100px;
                             height:100px;!important"></td>
-                            
-                                
+
+
                             @else
-                               
+
                             <img src="{{ $item->image }}" alt="{{ $item->image }}" class="img-tumbnail"
                             style=" width:100px;
                             height:100px;!important"></td>
-  
+
                             @endif
                         </td>
                         <td data-label="Nom complet" style="border-top: 0px; ">
                             {{ $item->nom }}
                         </td>
-                        
+
                         <td data-label="évaluation" style="border-top: 0px; ">{{ $item->rate }}</td>
 
                         <td data-label="commentaire" style="border-top: 0px; white-space: wrap;"><br>
@@ -83,10 +83,10 @@
                         </td>
 
                         <td style="border-top: 0px;"><a class="btn btn-success" href="{{ route('reviews.edit', $item->id) }}">edit</a>
-                        
 
-                        
-                            <form action="{{ route('reviews.destroy', $item->id) }}" method="post">
+
+
+                            <form action="{{ secur_url(route('reviews.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')
@@ -96,7 +96,7 @@
                 @endforeach
             </tbody>
         </table>
-       
+
 
     </div>
 @endsection
