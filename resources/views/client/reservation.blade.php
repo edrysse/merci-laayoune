@@ -333,7 +333,7 @@ Menu délicieux, Nombre de convives, Café salon de thé.">
                         </h3>
                     </div>
 
-                    <form action="{{ secur_url(route('createReservation') )}}" class="wrap-form-reservation size22 m-l-r-auto"
+                    <form action="{{ secure_url(route('createReservation') )}}" class="wrap-form-reservation size22 m-l-r-auto"
                         method="patch">
                         <div class="row">
                             <div class="col-md-4">

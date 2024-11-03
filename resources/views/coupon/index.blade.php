@@ -64,7 +64,7 @@
         <button class="btn btn-primary btn-lg p-3" onclick="afficheCodePromo()" >
             ajouter Code promo
         </button>
-        <form action="{{ secur_url()route('coupon.create') }}">
+        <form action="{{ secure_url()route('coupon.create') }}">
             <div class="py-3 mb-3 cardcoupon" id="coupon" style="display: none">
 
                 <div>
@@ -130,7 +130,7 @@
                         <td style="display: flex;justify-content: center; border-top: 0px;">{{ $item->code }}</td>
                         <td style="border-top: 0px; ">{{ $item->discount }}</td>
                         <td>
-                            <form action="{{secur_url( route('coupon.destroy', $item->id)) }}" method="post">
+                            <form action="{{secure_url( route('coupon.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

@@ -29,7 +29,7 @@
                         </td>
                         <td> <a class="btn btn-primary" href="{{ route('lunch.show', $item->id) }}">show</a></td>
                         <td>
-                            <form action="{{ secur_url(route('lunch.destroy', $item->id) )}}" method="post">
+                            <form action="{{ secure_url(route('lunch.destroy', $item->id) )}}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

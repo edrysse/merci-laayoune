@@ -25,7 +25,7 @@
         background-color: #e5e7eb;
     }
 </style>
-    <form action="{{ secur_url(route('repas.update', $repa->id)) }}" class="container" method="post" enctype="multipart/form-data">
+    <form action="{{ secure_url(route('repas.update', $repa->id)) }}" class="container" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <br />

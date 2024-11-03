@@ -31,7 +31,7 @@
                 </div>
                 <div class=" col-md-6">
                     <br><br><br><br>
-                    <form action="{{secur_url( route('comment.store')) }}" style="background-color: rgb(231, 225, 219)"
+                    <form action="{{secure_url( route('comment.store')) }}" style="background-color: rgb(231, 225, 219)"
                         class="container border border-dark rounded" id="algin-form" method="post"
                         enctype="multipart/form-data">
                         @csrf

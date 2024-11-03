@@ -1,6 +1,6 @@
 @extends('Admins.indexAdmin')
 @section('content')
-    <form action="{{secur_url( route('photos.update', $photo->id) )}}" class="container" method="post">
+    <form action="{{secure_url( route('photos.update', $photo->id) )}}" class="container" method="post">
         @csrf
         @method('put')
         <br><br><br><br><br><br>

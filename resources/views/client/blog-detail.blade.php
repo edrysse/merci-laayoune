@@ -90,7 +90,7 @@
                         </div>
 
                         <!-- Leave a comment -->
-                        <form action="{{ secur_url(route('clientComment.store') )}}" class="wrap-form-booking" method="post">
+                        <form action="{{ secure_url(route('clientComment.store') )}}" class="wrap-form-booking" method="post">
                             @csrf
                             <h4 class="txt33 p-b-14">
                                 ajouter un commantaire
@@ -130,7 +130,7 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
                         <!-- Search -->
-                        <form class="d-flex" action="{{ secur_url(route('search')) }}" method="get" role="search">
+                        <form class="d-flex" action="{{ secure_url(route('search')) }}" method="get" role="search">
                             <select class="form-control me-2" type="search" name="search" placeholder="Search"
                                 aria-label="Search">
                                 @foreach ($categories as $category)

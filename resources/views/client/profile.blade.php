@@ -37,7 +37,7 @@
     <div class="container"
         style="border: 2px solid black ;margin-left:150px; margin:100px ; padding:40px; background-color: white">
         @if ($profile)
-            <form action="{{ secur_url(route('clientprofile.update', $profile->id)) }}" method="post"
+            <form action="{{ secure_url(route('clientprofile.update', $profile->id)) }}" method="post"
                 enctype="multipart/form-data">
                 @csrf
                 @method('put')
@@ -182,7 +182,7 @@
 
     </div>
 @else
-    <form action="{{secur_url( route('clientprofile.store') )}}" method="POST" enctype="multipart/form-data"
+    <form action="{{secure_url( route('clientprofile.store') )}}" method="POST" enctype="multipart/form-data"
         style="border:2px solid black; padding:10px">
         @csrf
         <div class="form-row">

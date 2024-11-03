@@ -53,7 +53,7 @@
 
                     </div>
                     <p class="lead">{{ $repas->description }}</p>
-                    <form action="{{ secur_url(route('add_pannier', $repas->id)) }}" method='get'>
+                    <form action="{{ secure_url(route('add_pannier', $repas->id)) }}" method='get'>
 
                         <div class="quantit">
 

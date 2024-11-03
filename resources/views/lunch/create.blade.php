@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <form action="{{secur_url( route('lunch.store') )}}" class="container" method="post" enctype="multipart/form-data">
+    <form action="{{secure_url( route('lunch.store') )}}" class="container" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="exampleFormControlInput1">nom</label>

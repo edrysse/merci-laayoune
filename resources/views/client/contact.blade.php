@@ -115,7 +115,7 @@ des commentaires ou des réservations spéciales, n'hésitez pas à entrer en co
                 ENVOYEZ-NOUS UN MESSAGE
             </h3>
 
-            <form action="{{secur_url( route('createContact') )}}" class="wrap-form-reservation size22 m-l-r-auto" method="patch">
+            <form action="{{secure_url( route('createContact') )}}" class="wrap-form-reservation size22 m-l-r-auto" method="patch">
                 @csrf
                 <div class="row">
                     <div class="col-md-4">

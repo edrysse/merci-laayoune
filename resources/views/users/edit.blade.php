@@ -1,7 +1,7 @@
 @extends('Admins.indexAdmin')
 
 @section('content')
-    <form action="{{ secur_url(route('user.update', $user->id)) }}" class="container" method="post">
+    <form action="{{ secure_url(route('user.update', $user->id)) }}" class="container" method="post">
         @csrf
         @method('put');
         <br />

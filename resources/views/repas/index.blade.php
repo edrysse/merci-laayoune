@@ -40,7 +40,7 @@
         <div class="form-group select-dropdown" style="margin-bottom: 16px">
 
 
-            <form action="{{secur_url( route('repa.type')) }}">
+            <form action="{{secure_url( route('repa.type')) }}">
                 <select name="type" id="type">
 
                     <optgroup label="Standard drinks">
@@ -119,7 +119,7 @@
                         <td style="display: flex;flex-direction: column; border-top: 0px;padding: 0;" class="td-btn">
 
                             {{-- <a class="btn btn-success" href="{{ route('repas.edit', $item->id) }}">edit</a> --}}
-                            <form action="{{ secur_url(route('repas.edit', $item->id)) }}" >
+                            <form action="{{ secure_url(route('repas.edit', $item->id)) }}" >
                                 <button type="submit" class="btn btn-success">edit</button>
                                 @csrf
                                 @method('PATCH')
@@ -127,7 +127,7 @@
 
                             <a class="btn btn-primary" href="{{ route('repas.show', $item->id) }}">show</a>
 
-                            <form action="{{ secur_url(route('repas.destroy', $item->id) )}}" method="post">
+                            <form action="{{ secure_url(route('repas.destroy', $item->id) )}}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

@@ -21,7 +21,7 @@
             @endif
 
             <div class="col">
-                <form action="{{ secur_url(route('reservation.store') )}}" class="container" method="post">
+                <form action="{{ secure_url(route('reservation.store') )}}" class="container" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlInput1">date</label>

@@ -56,7 +56,7 @@
                         <td> <a class="btn btn-primary" href="{{ route('user.show', $item->id) }}"><i
                                     class="fa-solid fa-eye fa-1x"></i></a>&nbsp;</td>
                         <td>
-                            <form action="{{ secur_url(route('user.destroy', $item->id)) }}" method="post">
+                            <form action="{{ secure_url(route('user.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

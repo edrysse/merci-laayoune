@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <form action="{{secur_url( route('dinner.update', $dinner->id) )}}" class="container" method="post">
+    <form action="{{secure_url( route('dinner.update', $dinner->id) )}}" class="container" method="post">
         @csrf
         @method('put')
         <div class="form-group">

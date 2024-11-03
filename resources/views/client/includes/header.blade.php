@@ -47,7 +47,7 @@
                             </li>
                             <li>
 
-                                <form action="{{ secur_url(route('pannier.index')) }}">
+                                <form action="{{ secure_url(route('pannier.index')) }}">
                                     <button type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="28"
                                             fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
@@ -89,7 +89,7 @@
 
 
 
-                    <form action="{{ secur_url(route('pannier.index')) }}">
+                    <form action="{{ secure_url(route('pannier.index')) }}">
                         <button type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="28"
                                 fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
