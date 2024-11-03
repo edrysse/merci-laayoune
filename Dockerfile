@@ -42,5 +42,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 EXPOSE 443
 
-# تشغيل Nginx و php-fpm معًا
-CMD service nginx start && php-fpm
+# استخدام Docker entrypoint لتشغيل Nginx و PHP-FPM
+CMD ["sh", "-c", "service nginx start && php-fpm"]
