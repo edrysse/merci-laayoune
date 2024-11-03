@@ -28,5 +28,4 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 # فتح المنفذ 80
 EXPOSE 80
 
-# بدء Nginx و PHP-FPM
-CMD ["sh", "-c", "service nginx start; php-fpm"]
+CMD ["php-fpm", "-D", "&&", "nginx", "-g", "daemon off;"]
