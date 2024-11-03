@@ -38,8 +38,9 @@ RUN composer install --no-dev --optimize-autoloader
 # نسخ ملف إعدادات Nginx
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# فتح المنفذ 80 ليتمكن Render من اكتشافه
+# فتح المنفذين 80 و 443
 EXPOSE 80
+EXPOSE 443
 
 # تشغيل Nginx و php-fpm معًا
 CMD service nginx start && php-fpm
