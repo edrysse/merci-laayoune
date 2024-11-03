@@ -28,4 +28,4 @@ RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 # فتح المنفذ 80
 EXPOSE 80
 
-CMD ["php-fpm", "-D", "&&", "nginx", "-g", "daemon off;"]
+CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
