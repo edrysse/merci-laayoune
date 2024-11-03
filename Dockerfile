@@ -43,4 +43,4 @@ EXPOSE 80
 EXPOSE 443
 
 # استخدام Docker entrypoint لتشغيل Nginx و PHP-FPM
-CMD ["php-fpm", "-D", "&&", "nginx", "-g", "daemon off;"]
+CMD ["sh", "-c", "service nginx start && php-fpm"]
