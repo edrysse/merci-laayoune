@@ -1,28 +1,22 @@
 version: '3.8'
 
 services:
-  php-fpm:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - .:/var/www
-    networks:
-      - app-network
+    expose:
+      - "9000"  # منفذ PHP-FPM
 
-  nginx:
+  web:
     image: nginx:alpine
     ports:
-      - "80:80"
-      - "443:443"
+      - "80:80"     # HTTP
+      - "443:443"   # HTTPS
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - .:/var/www
-    networks:
-      - app-network
     depends_on:
-      - php-fpm
-
-networks:
-  app-network:
-    driver: bridge
+      - app

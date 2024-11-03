@@ -1,32 +1,45 @@
-# استخدام صورة PHP مع Nginx
+# استخدام صورة PHP 8.2 مع FPM
 FROM php:8.2-fpm
 
-# تثبيت Nginx والأدوات المطلوبة
-RUN apt-get update && apt-get install -y nginx unzip git
+# تثبيت الحزم اللازمة و Nginx
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    nginx \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    git \
+    curl \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# تثبيت التمديدات المطلوبة لـ PHP
-RUN docker-php-ext-install pdo pdo_mysql
-
-# نسخ تطبيق Laravel إلى الحاوية
-COPY . /var/www
-
-# نسخ ملف تكوين Nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# تعيين مسار العمل
-WORKDIR /var/www
+# تثبيت إضافات PHP المطلوبة
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 # تثبيت Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-# تثبيت الحزم باستخدام Composer
-RUN composer install --no-interaction --prefer-dist
+# إعداد مجلد العمل
+WORKDIR /var/www
 
-# إعداد الأذونات (تأكد من أن لديك الأذونات المناسبة)
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+# نسخ كافة ملفات المشروع
+COPY . .
 
-# فتح المنفذ 80
+# ضبط صلاحيات الملفات والمجلدات
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 755 /var/www/storage \
+    && chmod -R 755 /var/www/bootstrap/cache
+
+# تثبيت مكتبات Composer
+RUN composer install --no-dev --optimize-autoloader
+
+# نسخ ملف إعدادات Nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# فتح المنفذ 80 ليتمكن Render من اكتشافه
 EXPOSE 80
 
-# بدء Nginx و PHP-FPM
-CMD ["sh", "-c", "php-fpm -D && nginx -g 'daemon off;'"]
+# تشغيل Nginx و php-fpm معًا
+CMD service nginx start && php-fpm
