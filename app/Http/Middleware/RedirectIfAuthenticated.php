@@ -17,12 +17,6 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
-        // Redirect to HTTPS if the request is not secure
-        if (!$request->secure()) {
-            return redirect()->secure($request->getRequestUri());
-        }
-
-        // Check if the user is authenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
