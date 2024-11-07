@@ -30,6 +30,9 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\CouponController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 
 Route::get('/clientBlog/search', [App\Http\Controllers\clientBlog::class, 'search'])->name('search');
@@ -136,4 +139,9 @@ Route::get('/Menu/Dessert', [clientMenu::class, 'index_dessert'])->name('Dessert
 Route::get('/Menu/Sandwich', [clientMenu::class, 'index_sandwich'])->name('sandwich');
 Route::get('/Menu/Gdrinks', [clientMenu::class, 'index_Gdrinks'])->name('Gdrinks');
 Route::get('/Menu/A-La-Carte', [clientMenu::class, 'index_Alacarte'])->name('Alacarte');
+
+
+//auth
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
