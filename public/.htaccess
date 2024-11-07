@@ -1,21 +1,29 @@
-<IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews -Indexes
-    </IfModule>
+# تفعيل إعادة الكتابة
+RewriteEngine On
 
-    RewriteEngine On
+# إعادة التوجيه من HTTP إلى HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+# إعدادات أخرى لتحسين الأداء والأمان
+<IfModule mod_headers.c>
+    # تمكين التخزين المؤقت للمتصفح
+    <FilesMatch "\.(jpg|jpeg|png|gif|css|js|ico|webp|woff|woff2|ttf|svg)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
 
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    # تفعيل X-Content-Type-Options لتجنب مشاكل أنواع المحتوى
+    Header set X-Content-Type-Options "nosniff"
 
-    # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    # تفعيل X-Frame-Options لمنع التضمين
+    Header always append X-Frame-Options SAMEORIGIN
+
+    # تفعيل X-XSS-Protection لتجنب هجمات XSS
+    Header set X-XSS-Protection "1; mode=block"
 </IfModule>
+
+# منع الوصول إلى ملفات .env و .htaccess مباشرة
+<FilesMatch "(\.env|\.htaccess)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
