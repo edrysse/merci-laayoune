@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('reservations', function (Blueprint $table) { 
-            // $table->dropColumn('id_user');
-            // dropConstrainedForeignId('pick_detail_id');
-            $table->dropForeign(['id_user']);
-            $table->dropColumn('id_user');
+        Schema::table('reservations', function (Blueprint $table) {
+            // Drop the foreign key if it exists
+            $table->dropForeign(['id_user']);  // Adjust the foreign key name if it's different
 
+            // Drop the 'id_user' column
+            $table->dropColumn('id_user');
         });
     }
 
@@ -26,7 +26,11 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('reservations', function (Blueprint $table) {
-            //
+            // Recreate the 'id_user' column (assuming it's an integer)
+            $table->unsignedBigInteger('id_user');
+
+            // Add the foreign key back, assuming it references the 'users' table
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 };
