@@ -26,10 +26,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('reservations', function (Blueprint $table) {
-            // Recreate the 'id_user' column (assuming it's an integer)
-            $table->unsignedBigInteger('id_user');
+            // Recreate the 'id_user' column (assuming it's an unsigned big integer for foreign key relationship)
+            $table->unsignedBigInteger('id_user')->nullable();  // Ensure the column allows null values if needed
 
-            // Add the foreign key back, assuming it references the 'users' table
+            // Add the foreign key back, assuming it references the 'id' on the 'users' table
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
