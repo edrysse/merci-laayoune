@@ -90,7 +90,7 @@ Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->na
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// tests : 
+// tests :
 
 // Route::get('/test', function() {return view('client.validation');});
 // Route::get('/test', [ComndController::class, 'index']);
@@ -136,3 +136,4 @@ Route::get('/Menu/Dessert', [clientMenu::class, 'index_dessert'])->name('Dessert
 Route::get('/Menu/Sandwich', [clientMenu::class, 'index_sandwich'])->name('sandwich');
 Route::get('/Menu/Gdrinks', [clientMenu::class, 'index_Gdrinks'])->name('Gdrinks');
 Route::get('/Menu/A-La-Carte', [clientMenu::class, 'index_Alacarte'])->name('Alacarte');
+

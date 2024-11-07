@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Http\Request;
 
 class ForceHttps
@@ -16,8 +17,9 @@ class ForceHttps
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->isSecure()) {
-            return redirect()->secure($request->getRequestUri());
+        // Force HTTPS if the application is in production
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
         }
 
         return $next($request);

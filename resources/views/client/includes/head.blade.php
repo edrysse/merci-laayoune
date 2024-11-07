@@ -2,34 +2,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @yield('meta')
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @yield('meta')
 
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href={{ secure_asset('clientpage/images/MERCI_IMG/logo_header/Logo-Merci-b3.png') }} />
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/bootstrap/css/bootstrap.min.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/fonts/themify/themify-icons.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/animate/animate.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/css-hamburgers/hamburgers.min.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/animsition/css/animsition.min.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/select2/select2.min.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/daterangepicker/daterangepicker.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/slick/slick.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/vendor/lightbox2/css/lightbox.min.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/css/util.css') }}>
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/css/main.css') }}>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href={{ secure_asset('clientpage/css/all.min.css') }}>
+        <!--===============================================================================================-->
+        <link rel="icon" type="image/png" href="{{ App::environment('production') ? secure_asset('clientpage/images/MERCI_IMG/logo_header/Logo-Merci-b3.png') : asset('clientpage/images/MERCI_IMG/logo_header/Logo-Merci-b3.png') }}" />
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/bootstrap/css/bootstrap.min.css') : asset('clientpage/vendor/bootstrap/css/bootstrap.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/fonts/font-awesome-4.7.0/css/font-awesome.min.css') : asset('clientpage/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/fonts/themify/themify-icons.css') : asset('clientpage/fonts/themify/themify-icons.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/animate/animate.css') : asset('clientpage/vendor/animate/animate.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/css-hamburgers/hamburgers.min.css') : asset('clientpage/vendor/css-hamburgers/hamburgers.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/animsition/css/animsition.min.css') : asset('clientpage/vendor/animsition/css/animsition.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/select2/select2.min.css') : asset('clientpage/vendor/select2/select2.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/daterangepicker/daterangepicker.css') : asset('clientpage/vendor/daterangepicker/daterangepicker.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/slick/slick.css') : asset('clientpage/vendor/slick/slick.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/vendor/lightbox2/css/lightbox.min.css') : asset('clientpage/vendor/lightbox2/css/lightbox.min.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/css/util.css') : asset('clientpage/css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/css/main.css') : asset('clientpage/css/main.css') }}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{ App::environment('production') ? secure_asset('clientpage/css/all.min.css') : asset('clientpage/css/all.min.css') }}">
+       
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

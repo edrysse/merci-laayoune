@@ -53,7 +53,7 @@
 
                     </div>
                     <p class="lead">{{ $repas->description }}</p>
-                    <form action="{{ secure_url(route('add_pannier', $repas->id)) }}" method='get'>
+                    <form action="{{ app()->environment('local') ? route('add_pannier', $repas->id) : secure_url(route('add_pannier', $repas->id)) }}" method="get">
 
                         <div class="quantit">
 
