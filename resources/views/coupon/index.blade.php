@@ -64,7 +64,7 @@
         <button class="btn btn-primary btn-lg p-3" onclick="afficheCodePromo()" >
             ajouter Code promo
         </button>
-        <form action="{{ secure_url()route('coupon.create') }}">
+        <form action="{{ secure_url(route('coupon.create') )}}">
             <div class="py-3 mb-3 cardcoupon" id="coupon" style="display: none">
 
                 <div>
