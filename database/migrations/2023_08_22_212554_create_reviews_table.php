@@ -11,6 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('reviews')) {
+
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
@@ -18,7 +20,7 @@ return new class extends Migration
             $table->integer('rate');
             $table->timestamps();
         });
-    }
+    }}
 
     /**
      * Reverse the migrations.

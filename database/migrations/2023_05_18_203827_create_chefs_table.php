@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chefs', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
-            $table->string('image');
-           $table->string('bio');
-            $table->timestamps();
-        });
+        // تحقق من وجود الجدول 'chefs' قبل إنشاءه
+        if (!Schema::hasTable('chefs')) {
+            Schema::create('chefs', function (Blueprint $table) {
+                $table->id();
+                $table->string('nom');
+                $table->string('image');
+                $table->string('bio');
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

@@ -10,7 +10,9 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+{
+    // تحقق من وجود جدول 'reservations'
+    if (!Schema::hasTable('reservations')) {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
             // $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
@@ -24,6 +26,8 @@ return new class extends Migration
             $table->softDeletes();
         });
     }
+}
+
 
     /**
      * Reverse the migrations.

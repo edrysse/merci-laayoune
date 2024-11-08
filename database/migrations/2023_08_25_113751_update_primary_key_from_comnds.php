@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('comnds')) {
+
         Schema::table('comnds', function (Blueprint $table) {
             // $table->dropPrimary('id');
             // $table->dropColumn('id');
             // $table->unsignedInteger('id');
             // $table->primary('oid'); // Add the primary key on the 'oid' column
 
-        });
+        });}
     }
 
     /**

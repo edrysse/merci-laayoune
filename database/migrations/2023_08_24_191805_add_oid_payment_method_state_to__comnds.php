@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('comnds')) {
+
         Schema::table('comnds', function (Blueprint $table) {
             $table->string('oid');
             $table->string('Pmethod');
             $table->string('state')->default('Non Payée');
         });
-    }
+    }}
 
     /**
      * Reverse the migrations.

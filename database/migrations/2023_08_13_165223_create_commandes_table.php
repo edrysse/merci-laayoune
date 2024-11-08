@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commandes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // تحقق من وجود جدول 'commandes' قبل إنشائه
+        if (!Schema::hasTable('commandes')) {
+            Schema::create('commandes', function (Blueprint $table) {
+                $table->id();
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('repas')) {
+
         Schema::table('repas', function (Blueprint $table) {
             $table->string('description')->nullable()->change();
         });
     }
-
+    }
     /**
      * Reverse the migrations.
      */

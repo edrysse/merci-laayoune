@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (!Schema::hasTable('reviews')) {
+
         Schema::table('reviews', function (Blueprint $table) {
             $table->string('image')->nullable();
         });
-    }
+    }}
 
     /**
      * Reverse the migrations.

@@ -10,17 +10,21 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+{
+    // تحقق من وجود الجدول 'comments' قبل إنشاءه
+    if (!Schema::hasTable('comments')) {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_blog')->constrained('blogs')->onDelete('cascade');
             $table->string('image');
-             $table->string('commantaire');
+            $table->string('commantaire');
             $table->string('name');
             $table->string('email');
             $table->timestamps();
         });
     }
+}
+
 
     /**
      * Reverse the migrations.

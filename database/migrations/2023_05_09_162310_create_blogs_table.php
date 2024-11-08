@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('titre');
-            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-            $table->foreignId('id_category')->constrained('categories')->onDelete('cascade');
-            $table->string('description');
-            $table->timestamps();
-        });
+        // تحقق من وجود الجدول 'blogs' قبل إنشاءه
+        if (!Schema::hasTable('blogs')) {
+            Schema::create('blogs', function (Blueprint $table) {
+                $table->id();
+                $table->string('image');
+                $table->string('titre');
+                $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
+                $table->foreignId('id_category')->constrained('categories')->onDelete('cascade');
+                $table->string('description');
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

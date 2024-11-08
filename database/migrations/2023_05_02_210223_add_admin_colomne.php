@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->integer('role')->default(0);
-        });
+        // تحقق من وجود جدول 'users' وإضافة العمود إذا لم يكن موجودًا
+        if (Schema::hasTable('users') && !Schema::hasColumn('users', 'role')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->integer('role')->default(0);
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

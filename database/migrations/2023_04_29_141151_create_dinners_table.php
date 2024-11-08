@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dinners', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
-            $table->string('description');
-            $table->integer('prix');
-            $table->string('image');
-
-            $table->timestamps();
-        });
+        // تحقق من وجود جدول 'dinners'
+        if (!Schema::hasTable('dinners')) {
+            Schema::create('dinners', function (Blueprint $table) {
+                $table->id();
+                $table->string('nom');
+                $table->string('description');
+                $table->integer('prix');
+                $table->string('image');
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

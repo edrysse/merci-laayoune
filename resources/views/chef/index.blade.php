@@ -65,7 +65,7 @@
 
                          <a class="btn btn-primary" href="{{ route('chef.show', $item->id) }}">show</a>
 
-                            <form action="{{secur_url( route('chef.destroy', $item->id)) }}" method="post">
+                            <form action="{{secure_url( route('chef.destroy', $item->id)) }}" method="post">
                                 <button type="submit" class="btn btn-danger">delete</button>
                                 @csrf
                                 @method('DELETE')

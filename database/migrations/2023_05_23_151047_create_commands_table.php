@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commands', function (Blueprint $table) {
-            $table->id();
-            $table->string('repas');
-            $table->string('quantite');
-            $table->integer('prix_total');
-            $table->string('adresse');
-            $table->string('livraison')->default('no_delivred');
-            $table->timestamps();
-
-        });
+        // تحقق من وجود جدول 'commands' قبل إنشائه
+        if (!Schema::hasTable('commands')) {
+            Schema::create('commands', function (Blueprint $table) {
+                $table->id();
+                $table->string('repas');
+                $table->string('quantite');
+                $table->integer('prix_total');
+                $table->string('adresse');
+                $table->string('livraison')->default('no_delivred');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

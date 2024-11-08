@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::hasTable('comnds')) {
+
         Schema::table('comnds', function (Blueprint $table) {
             //
             $table->string('email')->nullable()->change();
             $table->longText('commande')->change();
         });
-    }
+    }}
 
     /**
      * Reverse the migrations.

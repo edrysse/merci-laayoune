@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-            $table->string('name');
-            $table->string('email');
-            $table->integer('phone');
-            $table->string('message');
-            $table->timestamps();
-        });
+        // تحقق من وجود جدول 'contacts'
+        if (!Schema::hasTable('contacts')) {
+            Schema::create('contacts', function (Blueprint $table) {
+                $table->increments('id');
+                $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
+                $table->string('name');
+                $table->string('email');
+                $table->integer('phone');
+                $table->string('message');
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

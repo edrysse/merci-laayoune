@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // تحقق من وجود العمود 'image' في جدول 'repas' قبل إضافته
         Schema::table('repas', function (Blueprint $table) {
-            $table->string('image');
+            if (!Schema::hasColumn('repas', 'image')) {
+                $table->string('image');
+            }
         });
     }
+
 
     /**
      * Reverse the migrations.

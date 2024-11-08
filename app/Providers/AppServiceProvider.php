@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,10 +21,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Set the default string length to avoid MySQL errors on older versions
+        Schema::defaultStringLength(191);
+
         Paginator::useBootstrapFour();
+
         if (\App::environment('production')) {
             \URL::forceScheme('https');
         }
     }
-
 }

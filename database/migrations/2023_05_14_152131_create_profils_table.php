@@ -11,19 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profils', function (Blueprint $table) {
-            $table->id();
-            $table->string('image');
-            $table->string('facebook');
-            $table->string('insta');
-            $table->string('bio');
-            $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-            $table->string('adresse');
-            $table->integer('phone');
-            $table->string('genre');
-            $table->timestamps();
-        });
+        // تحقق من وجود الجدول 'profils' قبل إنشاءه
+        if (!Schema::hasTable('profils')) {
+            Schema::create('profils', function (Blueprint $table) {
+                $table->id();
+                $table->string('image');
+                $table->string('facebook');
+                $table->string('insta');
+                $table->string('bio');
+                $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
+                $table->string('adresse');
+                $table->integer('phone');
+                $table->string('genre');
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

@@ -11,14 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('photos', function (Blueprint $table) {
-            $table->id();
-            $table->string("photo");
-            $table->string("type");
-
-            $table->timestamps();
-        });
+        // تحقق من وجود جدول 'photos'
+        if (!Schema::hasTable('photos')) {
+            Schema::create('photos', function (Blueprint $table) {
+                $table->id();
+                $table->string("photo");
+                $table->string("type");
+                $table->timestamps();
+            });
+        }
     }
+
 
     /**
      * Reverse the migrations.

@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('repas', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom');
-            $table->integer('prix');
-            $table->string('type');
-            $table->string('description');
-
-            $table->timestamps();
-        });
+        // تحقق من وجود جدول 'repas'
+        if (!Schema::hasTable('repas')) {
+            Schema::create('repas', function (Blueprint $table) {
+                $table->id();
+                $table->string('nom');
+                $table->integer('prix');
+                $table->string('type');
+                $table->string('description');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
