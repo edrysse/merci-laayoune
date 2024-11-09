@@ -112,6 +112,23 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('chambres.index') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-home"></i>
+                </span>
+                <span class="menu-title">Chambres</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="{{ route('reservation_chambres.index') }}">
+                <span class="menu-icon">
+                    <i class="mdi mdi-calendar-check"></i>
+                </span>
+                <span class="menu-title">Réservations de Chambres</span>
+            </a>
+        </li>
+
+        <li class="nav-item menu-items">
             <a class="nav-link" href="contact">
                 <span class="menu-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

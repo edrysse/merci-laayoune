@@ -106,4 +106,39 @@ class reservationController extends Controller
         $reservation->restore();
         return redirect()->back();
     }
+    // عرض الحجز الخاص بالغرفة
+public function showChambreReservation($id)
+{
+    $reservationChambre = ReservationChambre::find($id);
+    return view('reservation.chambre.show', compact('reservationChambre'));
+}
+
+// إضافة حجز للغرفة
+public function createChambreReservation()
+{
+    $chambres = Chambre::all(); // جلب جميع الغرف المتاحة
+    return view('reservation.chambre.create', compact('chambres'));
+}
+
+public function storeChambreReservation(Request $request)
+{
+    $this->validate($request, [
+        'chambre_id' => 'required|exists:chambres,id',
+        'user_id' => 'required|exists:users,id',
+        'date_debut' => 'required|date',
+        'date_fin' => 'required|date',
+        'status' => 'required',
+    ]);
+
+    ReservationChambre::create([
+        'chambre_id' => $request->chambre_id,
+        'user_id' => $request->user_id,
+        'date_debut' => $request->date_debut,
+        'date_fin' => $request->date_fin,
+        'status' => $request->status,
+    ]);
+
+    return redirect()->route('reservation.index')->with('success', 'Reservation for chambre created successfully');
+}
+
 }

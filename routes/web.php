@@ -145,3 +145,51 @@ Route::get('/Menu/A-La-Carte', [clientMenu::class, 'index_Alacarte'])->name('Ala
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
+
+// عرض حجز الغرفة
+Route::get('/reservation/chambre/{id}', [ReservationController::class, 'showChambreReservation'])->name('reservation.chambre.show');
+
+// عرض صفحة إضافة حجز غرفة جديدة
+Route::get('/reservation/chambre/create', [ReservationController::class, 'createChambreReservation'])->name('reservation.chambre.create');
+
+// تخزين حجز الغرفة في قاعدة البيانات
+Route::post('/reservation/chambre', [ReservationController::class, 'storeChambreReservation'])->name('reservation.chambre.store');
+
+// تعديل حجز الغرفة
+Route::get('/reservation/chambre/edit/{id}', [ReservationController::class, 'editChambreReservation'])->name('reservation.chambre.edit');
+
+// تحديث حجز الغرفة
+Route::put('/reservation/chambre/{id}', [ReservationController::class, 'updateChambreReservation'])->name('reservation.chambre.update');
+
+// حذف حجز الغرفة
+Route::delete('/reservation/chambre/{id}', [ReservationController::class, 'destroyChambreReservation'])->name('reservation.chambre.destroy');
+
+// عرض جميع الحجوزات
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation.index');
+
+// عرض حجوزات محذوفة (الأرشيف)
+Route::get('/reservation/trashed', [ReservationController::class, 'Trashed'])->name('reservation.trashed');
+
+// عرض صفحة إضافة حجز جديد
+Route::get('/reservation/create', [ReservationController::class, 'create'])->name('reservation.create');
+
+// تخزين حجز جديد في قاعدة البيانات
+Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+
+// عرض تفاصيل حجز معين
+Route::get('/reservation/{id}', [ReservationController::class, 'show'])->name('reservation.show');
+
+// عرض صفحة تعديل حجز
+Route::get('/reservation/edit/{id}', [ReservationController::class, 'edit'])->name('reservation.edit');
+
+// تحديث حجز في قاعدة البيانات
+Route::put('/reservation/{id}', [ReservationController::class, 'update'])->name('reservation.update');
+
+// حذف حجز
+Route::delete('/reservation/{id}', [ReservationController::class, 'destroy'])->name('reservation.destroy');
+
+// حذف حجز نهائي (من الأرشيف)
+Route::delete('/reservation/forcedelete/{id}', [ReservationController::class, 'hdelete'])->name('reservation.forcedelete');
+
+// استرجاع حجز محذوف
+Route::post('/reservation/restore/{id}', [ReservationController::class, 'destrestoreroy'])->name('reservation.restore');
