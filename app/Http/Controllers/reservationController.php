@@ -7,7 +7,7 @@ use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class reservationController extends Controller
+class ReservationController extends Controller
 {
     public function __construnct(){
         $this->middleware('auth');
@@ -135,7 +135,7 @@ public function storeChambreReservation(Request $request)
         'user_id' => $request->user_id,
         'date_debut' => $request->date_debut,
         'date_fin' => $request->date_fin,
-        
+
         'status' => $request->status,
     ]);
 
