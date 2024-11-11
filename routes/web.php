@@ -33,6 +33,9 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 Route::get('/clientReservation', [ReservationController::class, 'create'])->name('clientReservation.create');
 Route::post('/clientReservation/store', [ReservationController::class, 'store'])->name('clientReservation.store');
 
+// إذا كان هناك مسار clientIndex.index مفقود
+Route::get('/clientIndex', [ReservationController::class, 'index'])->name('clientIndex.index');
+
 // تواصل العملاء
 Route::get('/clientContact', [ContactController::class, 'create'])->name('clientContact.create');
 Route::post('/clientContact/store', [ContactController::class, 'store'])->name('clientContact.store');
@@ -48,4 +51,3 @@ Route::get('/gallery/{id}', [GaleryController::class, 'show'])->name('gallery.sh
 // مسارات الغرف
 Route::get('/chambres', [ChambreController::class, 'index'])->name('chambres.index');
 Route::get('/chambres/{id}', [ChambreController::class, 'show'])->name('chambres.show');
-
