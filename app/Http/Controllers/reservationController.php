@@ -12,6 +12,7 @@ class ReservationController extends Controller
     public function __construnct(){
         $this->middleware('auth');
      }
+     
     public function index()
     {
         $profile=Profil::where('id_user',Auth::id())->first();
