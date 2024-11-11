@@ -13,7 +13,7 @@ class ReservationController extends Controller
         $this->middleware('auth');
      }
 
-     
+
     public function index()
     {
         $profile=Profil::where('id_user',Auth::id())->first();
@@ -143,6 +143,7 @@ public function storeChambreReservation(Request $request)
 
     return redirect()->route('reservation.index')->with('success', 'Reservation for chambre created successfully');
 }
+
 
 
 }
