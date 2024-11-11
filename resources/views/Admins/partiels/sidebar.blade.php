@@ -112,6 +112,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
+<<<<<<< HEAD
             <a class="nav-link" href="{{ route('chambres.index') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-home"></i>
@@ -129,6 +130,8 @@
         </li>
 
         <li class="nav-item menu-items">
+=======
+>>>>>>> 41441e3 (Your commit message)
             <a class="nav-link" href="contact">
                 <span class="menu-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

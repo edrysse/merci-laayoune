@@ -7,13 +7,20 @@ use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+<<<<<<< HEAD
 class ReservationController extends Controller
+=======
+class reservationController extends Controller
+>>>>>>> 41441e3 (Your commit message)
 {
     public function __construnct(){
         $this->middleware('auth');
      }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 41441e3 (Your commit message)
     public function index()
     {
         $profile=Profil::where('id_user',Auth::id())->first();
@@ -108,6 +115,7 @@ class ReservationController extends Controller
         $reservation->restore();
         return redirect()->back();
     }
+<<<<<<< HEAD
     // عرض الحجز الخاص بالغرفة
 public function showChambreReservation($id)
 {
@@ -146,4 +154,6 @@ public function storeChambreReservation(Request $request)
 
 
 
+=======
+>>>>>>> 41441e3 (Your commit message)
 }
