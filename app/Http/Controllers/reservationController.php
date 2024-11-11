@@ -135,10 +135,12 @@ public function storeChambreReservation(Request $request)
         'user_id' => $request->user_id,
         'date_debut' => $request->date_debut,
         'date_fin' => $request->date_fin,
+        
         'status' => $request->status,
     ]);
 
     return redirect()->route('reservation.index')->with('success', 'Reservation for chambre created successfully');
 }
+
 
 }
