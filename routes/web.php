@@ -50,27 +50,21 @@ Route::get('/chefs/{id}', [ChefController::class, 'show'])->name('chefs.show');
 Route::get('/gallery', [GaleryController::class, 'index'])->name('gallery.index');
 Route::get('/gallery/{id}', [GaleryController::class, 'show'])->name('gallery.show');
 
-<<<<<<< HEAD
-// مسارات الغرف
-Route::get('/chambres', [ChambreController::class, 'index'])->name('chambres.index');
-Route::get('/chambres/{id}', [ChambreController::class, 'show'])->name('chambres.show');
-=======
-// Route::get('payment', [PayPalController::class, 'payment'])->name('payment');
+
+// مسارات الدفع
 Route::get('payment', [CheckoutController::class, 'store'])->name('payment');
 Route::get('cancel', [PayPalController::class, 'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PayPalController::class, 'success'])->name('payment.success');
 
-
-
-Route::get('/politique-de-confidentialite', function(){
+// سياسات الاستخدام
+Route::get('/politique-de-confidentialite', function() {
     return view('client.politique');
 })->name('politique');
-Route::get('/condition-utilisation', function(){
+Route::get('/condition-utilisation', function() {
     return view('client.condition-utilisation');
 })->name('Cutilisation');
 
-
-
+// قائمة الطعام
 Route::get('/Menu/Standard-Drinks', [clientMenu::class, 'index'])->name('standard-drinks');
 Route::get('/Menu/Sucre', [clientMenu::class, 'index_sucre'])->name('sucre');
 Route::get('/Menu/Sale', [clientMenu::class, 'index_sale'])->name('sale');
@@ -79,10 +73,7 @@ Route::get('/Menu/Sandwich', [clientMenu::class, 'index_sandwich'])->name('sandw
 Route::get('/Menu/Gdrinks', [clientMenu::class, 'index_Gdrinks'])->name('Gdrinks');
 Route::get('/Menu/A-La-Carte', [clientMenu::class, 'index_Alacarte'])->name('Alacarte');
 
-
-//auth
-
+// المصادقة
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
->>>>>>> 700be55 (back)
